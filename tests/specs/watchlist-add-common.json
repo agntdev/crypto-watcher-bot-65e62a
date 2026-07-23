@@ -1,19 +1,17 @@
 [
   {
-    "name": "Add common coin",
+    "name": "Add common coin shows popular coins list",
     "steps": [
       {
+        "send": { "callback": "watchlist:add_common" },
         "expect": [
           {
-            "method": "sendMessage",
+            "method": "editMessageText",
             "payload": {
-              "text": "Add pre-seeded popular crypto (BTC, ETH, TON, etc.)"
+              "text": "Pick coins to add to your watchlist:"
             }
           }
-        ],
-        "send": {
-          "callback": "watchlist:add_common"
-        }
+        ]
       }
     ]
   }

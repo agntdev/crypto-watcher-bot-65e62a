@@ -1,13 +1,42 @@
 [
   {
-    "name": "/start replies with the welcome + main menu",
+    "name": "/start shows onboarding for new users",
     "steps": [
       {
         "send": { "text": "/start" },
         "expect": [
           {
             "method": "sendMessage",
-            "payload": { "text": "👋 Welcome! Tap a button below to get started." }
+            "payload": {
+              "text": "Welcome to Crypto Watcher! I'll help you track crypto prices and get alerts.\n\nFirst, pick your timezone so alerts arrive at the right time:"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/start shows main menu after onboarding",
+    "steps": [
+      {
+        "send": { "text": "/start" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "Welcome to Crypto Watcher! I'll help you track crypto prices and get alerts.\n\nFirst, pick your timezone so alerts arrive at the right time:"
+            }
+          }
+        ]
+      },
+      {
+        "send": { "callback": "tz:UTC" },
+        "expect": [
+          {
+            "method": "editMessageText",
+            "payload": {
+              "text": "All set! Now add some coins to your watchlist."
+            }
           }
         ]
       }
