@@ -1,19 +1,17 @@
 [
   {
-    "name": "Daily summary settings",
+    "name": "Daily summary settings shows config",
     "steps": [
       {
+        "send": { "callback": "summary:configure" },
         "expect": [
           {
-            "method": "sendMessage",
+            "method": "editMessageText",
             "payload": {
-              "text": "Enable/disable morning summaries and set delivery time"
+              "text": "Daily summary\n\nStatus: ❌ Off\nDelivery time: 08:00 (UTC)\n\nToggle or set a new time:"
             }
           }
-        ],
-        "send": {
-          "callback": "summary:configure"
-        }
+        ]
       }
     ]
   }

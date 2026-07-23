@@ -1,0 +1,18 @@
+[
+  {
+    "name": "/stats shows admin stats",
+    "steps": [
+      {
+        "send": { "text": "/stats" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "This command is for admins only."
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
