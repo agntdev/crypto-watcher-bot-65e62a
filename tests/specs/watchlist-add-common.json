@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Add common coin",
+    "steps": [
+      {
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "Add pre-seeded popular crypto (BTC, ETH, TON, etc.)"
+            }
+          }
+        ],
+        "send": {
+          "callback": "watchlist:add_common"
+        }
+      }
+    ]
+  }
+]
